@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/recipes.css">
+</head>
+<body>
+    <div class="container-fluid" id="main">
+
+    </div>
+
+    <div class="container-fluid">
+        <h4>Garnish:</h4>
+        <div>
+            <img src="../../../res/images/caramelmacchiato.jpg" id="garnish">
+            <p class="design">Foam sphere in the middle (with spoon)</p>
+            <p class="design">Foam circle border (with spoon)</p>
+            <p class="design">4 caramel sauce circles</p>
+            <p class="design">18x towards center with toothpick</p>
+
+        </div>
+    </div>
+    
+    <script>
+        let recipe={cup: "Small Espresso Cup", steps: "3 pumps vanilla syrup/Double Shot/250mL Milk with Foam(steamed)/15g caramel on top (Design)/<a href='#garnish'>click to see garnish pattern", mainSize: "Dine in (Big Handle Cup)", availableSizes: ["12oz: Same", "16oz: 4 pumps vanilla syrup/3 shots/300mL Milk/15g caramel on top"]}
+
+        let main = document.getElementById("main")
+        let title = document.createElement("h1")
+        title.innerText="Caramel Macchiato"
+        let mainSizeTitle = document.createElement("h5")
+        mainSizeTitle.innerHTML = recipe.mainSize
+        main.append(title)
+        main.append(mainSizeTitle)
+        
+        steps = recipe.steps.split("/")
+
+        let i=1
+        steps.forEach(e=>{
+            let newStep = document.createElement("p")
+            newStep.innerHTML= (e)
+            main.append(newStep)
+            i++
+        })
+        recipe.availableSizes.forEach(e => {
+            let sizeTitle = document.createElement("h5")
+            main.append(sizeTitle)
+            e.split(":")
+            sizeTitle.innerHTML = e.split(":")[0]
+            
+            let steps2 = e.split(":")[1].split("/")
+
+            steps2.forEach(c => {
+                let newStep2 = document.createElement("p")
+                newStep2.innerHTML = c
+                main.append(newStep2)
+            })
+
+        })
+    </script>
+</body>
+</html>

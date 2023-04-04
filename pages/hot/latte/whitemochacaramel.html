@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/recipes.css">
+</head>
+<body>
+    <div class="container-fluid" id="main">
+
+    </div>
+
+    <div class="container-fluid">
+        <h4>Garnish:</h4>
+        <div>
+            <img src="../../../res/images/whitemochacaramel.jpg" id="garnish">
+            <p class="design">Foam sphere in the middle (with spoon)</p>
+            <p class="design">Foam circle between center and edge (with spoon)</p>
+            <p class="design">Foam circle border (with spoon)</p>
+            <p class="design">4x Caramel Rings</p>
+            <p class="design">9x towards center with toothpick</p>
+            <p class="design">9x towards outer sides with toothpick</p>
+
+        </div>
+    </div>
+
+    <script>
+        let recipe={cup: "Small Espresso Cup", steps: "2 pumps Caramel Sauce/1 pump White Chocolate Sauce/Single Shot/Stir/250mL Milk with Foam (Steamed)/5g Caramel on Top (Design)/<a href='#garnish'>click to see garnish pattern", mainSize: "Dine in (Hourglass)", availableSizes: ["12oz: same", "16oz: 3 pumps caramel sauce/1.5 pumps white chocolate sauce/Double Shot/300mL milk with foam(steams)/10g caramel sauce on top"]}
+
+        let main = document.getElementById("main")
+        let title = document.createElement("h1")
+        title.innerText="White Mocha Caramel Latte"
+        let mainSizeTitle = document.createElement("h5")
+        mainSizeTitle.innerHTML = recipe.mainSize
+        main.append(title)
+        main.append(mainSizeTitle)
+
+        steps = recipe.steps.split("/")
+
+        let i=1
+        steps.forEach(e=>{
+            let newStep = document.createElement("p")
+            newStep.innerHTML= (e)
+            main.append(newStep)
+            i++
+        })
+        recipe.availableSizes.forEach(e => {
+            let sizeTitle = document.createElement("h5")
+            main.append(sizeTitle)
+            e.split(":")
+            sizeTitle.innerHTML = e.split(":")[0]
+            
+            let steps2 = e.split(":")[1].split("/")
+
+            steps2.forEach(c => {
+                let newStep2 = document.createElement("p")
+                newStep2.innerHTML = c
+                main.append(newStep2)
+            })
+
+        })
+    </script>
+</body>
+</html>

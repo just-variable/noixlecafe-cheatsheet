@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Espresso Categories</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/hotdrinksmenu.css">
+</head>
+<body>
+    <a href="../"></a>
+    <div id="main" class="container-fluid">
+
+
+    </div>
+
+
+    <script>
+        let drinks = [
+            {"name": "Espresso", destination: "./espresso.html", color: "#4E2A2A"},
+            {"name": "Double Espresso", destination: "./doubleespresso.html", color: "#bdab98"},
+            {"name": "Cortado", destination: "./cortado.html", color: "#967969"},
+            {"name": "Piccolo", destination: "./piccolo.html", color: "#6F4E37"},
+            {"name": "Americano", destination: "./americano.html", color: "#6F6E39"},
+            {"name": "Long-Black", destination: "./longblack.html", color: "#6F6E39"},
+            {"name": "Drip-Coffee (V60)", destination: "./v60.html", color: "#6F6E39"},
+            {"name": "French Press", destination: "./frenchpress.html", color: "#6F6E39"}
+        ]
+
+
+        let main = document.getElementById("main")
+        let i=0
+        drinks.forEach(e=>{
+            if(i%4 == 0 && i != 0){
+                let br = document.createElement("div")
+                br.style.flexBasis="100%"
+                br.style.height="0%"
+                main.append(br)
+            }
+            newButton = document.createElement("button")
+            newButton.href = e.destination
+            newButton.innerText = e.name
+            newButton.classList.add("btn")
+            newButton.style.backgroundColor = e.color
+            newButton.addEventListener("click", c=>{
+                window.location.href = (e.destination)
+            })
+            main.append(newButton)
+            i++
+        })
+
+    </script>
+</body>
+</html>

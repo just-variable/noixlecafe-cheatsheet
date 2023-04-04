@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/recipes.css">
+</head>
+<body>
+    <div class="container-fluid" id="main">
+
+    </div>
+
+
+    <script>
+        let main = document.getElementById("main")
+        let title = document.createElement("h1")
+        title.innerText="Orange Juice"
+        main.append(title)
+        let recipe={cup: "Small Espresso Cup", steps: "get from fridge"}
+
+        steps = recipe.steps.split("/")
+
+        let i=1
+        steps.forEach(e=>{
+            let newStep = document.createElement("p")
+            newStep.innerHTML= (e)
+            main.append(newStep)
+            i++
+        })
+    </script>
+</body>
+</html>

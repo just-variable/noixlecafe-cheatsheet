@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/recipes.css">
+</head>
+<body>
+    <div class="container-fluid" id="main">
+
+    </div>
+
+
+    <script>
+        let recipe={cup: "Small Espresso Cup", steps: "80mL Dr. Smoothie Peach/75mL water/1 cup ice cubes/blend", mainSize: "Dine in (milkshake cup)", availableSizes: ["400cc: same"]}
+
+        let main = document.getElementById("main")
+        let title = document.createElement("h1")
+        title.innerText="Peach & Pear Smoothie"
+        main.append(title)
+        let mainSizeTitle = document.createElement("h5")
+        mainSizeTitle.innerHTML = recipe.mainSize
+        main.append(mainSizeTitle)
+
+        steps = recipe.steps.split("/")
+
+        let i=1
+        steps.forEach(e=>{
+            let newStep = document.createElement("p")
+            newStep.innerHTML= (e)
+            main.append(newStep)
+            i++
+        })
+        recipe.availableSizes.forEach(e => {
+            let sizeTitle = document.createElement("h5")
+            main.append(sizeTitle)
+            e.split(":")
+            sizeTitle.innerHTML = e.split(":")[0]
+            
+            let steps2 = e.split(":")[1].split("/")
+
+            steps2.forEach(c => {
+                let newStep2 = document.createElement("p")
+                newStep2.innerHTML = c
+                main.append(newStep2)
+            })
+
+        })
+    </script>
+</body>
+</html>

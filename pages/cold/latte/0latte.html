@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Espresso Categories</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/colddrinksmenu.css">
+</head>
+<body>
+    <a href="../"></a>
+    <div id="main" class="container-fluid">
+
+
+    </div>
+
+
+    <script>
+        let drinks = [
+            {"name": "Iced Latte", destination: "./iced.html", color: "#6F6E39"},
+            {"name": "Matcha", destination: "./matcha.html", color: "#69bf64"},
+            {"name": "Blue Curacao", destination: "./bluecuracao.html", color: "#33becc"},
+            {"name": "Vanilla", destination: "./vanilla.html", color: "#F3E5AB"},
+            {"name": "Caramel", destination: "./caramel.html", color: "#C68E17"},
+            {"name": "Cinnamon", destination: "./cinnamon.html", color: "#D2691E"},
+            {"name": "Rose", destination: "./rose.html", color: "#FF69B4"},
+            // {"name": "Turmeric", destination: "./turmeric.html", color: "#6F6E39"},
+            {"name": "Charcoal", destination: "./charcoal.html", color: "#333333"},
+            {"name": "Iced Mocha", destination: "./icedmocha.html", color: "#BEA07E"},
+            {"name": "Iced White Mocha", destination: "./icedwhitemocha.html", color: "#6F6E39"},
+            {"name": "White Mocha Caramel", destination: "./whitemochacaramel.html", color: "#6F6E39"},
+            {"name": "Salted Caramel Mocha", destination: "./saltedcaramelmocha.html", color: "#6F6E39"},
+        ]
+
+
+        let main = document.getElementById("main")
+        let i=0
+        drinks.forEach(e=>{
+            if(i%4 == 0 && i != 0){
+                let br = document.createElement("div")
+                br.style.flexBasis="100%"
+                br.style.height="0%"
+                main.append(br)
+            }
+            newButton = document.createElement("button")
+            newButton.href = e.destination
+            newButton.innerText = e.name
+            newButton.classList.add("btn")
+            newButton.style.backgroundColor = e.color
+            newButton.addEventListener("click", c=>{
+                window.location.href = (e.destination)
+            })
+            main.append(newButton)
+            i++
+        })
+
+    </script>
+</body>
+</html>

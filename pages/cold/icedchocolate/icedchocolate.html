@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/recipes.css">
+</head>
+<body>
+    <div class="container-fluid" id="main">
+
+    </div>
+
+
+    <script>
+        let recipe={cup: "Small Espresso Cup", steps: "35g Chocolate powder/1 pump chocolate sauce/0.25 pumps vanilla syrup/250mL Milk/4 ice cubes/Shaken/Whipped Cream/Chocolate sauce on whipped cream", mainSize: "Dine in (small can cup)", availableSizes: ["400cc: same", "500cc: 50g Chocolate powder/1.5 Chocolate Pumps/300mL Milk/4 ice cubes/shaken/whipped cream on top/chocolate sauce on whipped cream"]}
+
+        let main = document.getElementById("main")
+        let title = document.createElement("h1")
+        title.innerText="Iced Chocolate"
+        let mainSizeTitle = document.createElement("h5")
+        mainSizeTitle.innerHTML = recipe.mainSize
+        main.append(title)
+        main.append(mainSizeTitle)
+
+        steps = recipe.steps.split("/")
+
+        let i=1
+        steps.forEach(e=>{
+            let newStep = document.createElement("p")
+            newStep.innerHTML= (e)
+            main.append(newStep)
+            i++
+        })
+        recipe.availableSizes.forEach(e => {
+            let sizeTitle = document.createElement("h5")
+            main.append(sizeTitle)
+            e.split(":")
+            sizeTitle.innerHTML = e.split(":")[0]
+            
+            let steps2 = e.split(":")[1].split("/")
+
+            steps2.forEach(c => {
+                let newStep2 = document.createElement("p")
+                newStep2.innerHTML = c
+                main.append(newStep2)
+            })
+
+        })
+    </script>
+</body>
+</html>

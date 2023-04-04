@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cold Drinks Categories</title>
+    <link rel="stylesheet" href="../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../res/styles/colddrinksmenu.css">
+</head>
+<body>
+    <div id="main" class="container-fluid">
+
+
+    </div>
+
+
+    <script>
+        let categories = [
+            {"name": "Espresso", destination: "./espresso/0espresso.html", color: "#bdab98"},
+            {"name": "Latte/Mocha", destination: "./latte/0latte.html", color: "#ccae88"},
+            // {"name": "Mocha", destination: "./mocha.html", color: "#967969"},
+            {"name": "Macchiato", destination: "./macchiato/0macchiato.html", color: "#6F4E37"},
+            {"name": "Tea", destination: "./tea/0tea.html", color: "#923c01"},
+            {"name": "Iced Chocolate", destination: "./icedchocolate/0icedchocolate.html", color: "#4E2A2A"},
+            {"name": "Milkshake", destination: "./milkshake/0milkshake.html", color: "#F1BBBA"},
+            {"name": "Smoothie", destination: "./smoothie/0smoothie.html", color: "#DA6D75"},
+            {"name": "Frappe", destination: "./frappe/0frappe.html", color: "#ccbeaa"},
+            {"name": "Lemonade", destination: "./lemonade/0lemonade.html", color: "#e7e154"},
+            {"name": "Alcohol", destination: "./alcohol/0alcohol.html", color: "#d5101d"},
+
+        ]
+
+
+        let main = document.getElementById("main")
+
+        categories.forEach(e=>{
+            newButton = document.createElement("button")
+            newButton.href = e.destination
+            newButton.innerText = e.name
+            newButton.classList.add("btn")
+            newButton.style.backgroundColor = e.color
+            newButton.addEventListener("click", c=>{
+                window.location.href = (e.destination   )
+            })
+            main.append(newButton)
+        })
+
+    </script>
+</body>
+</html>

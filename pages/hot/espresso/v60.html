@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../../res/styles/recipes.css">
+</head>
+<body>
+    <div class="container-fluid" id="main">
+
+    </div>
+
+
+    <script>
+        let recipe={cup: "Small Espresso Cup", steps: "drench filter paper with hot water then throw water/add 20g Grounded Beans onto filter paper(use scale)/0:00 - 50mL/0:30 - 50mL/0:50 - 50mL/1:10 - 50mL/1:30 - 50mL/1:50 - 50mL/Leave until 4:00", mainSize: "Dine In (Handle Cup)", availableSizes: ["12oz: same"]}
+
+        let main = document.getElementById("main")
+        let title = document.createElement("h1")
+        title.innerText="Drip-Coffee (V60)"
+
+        let mainSizeTitle = document.createElement("h5")
+        mainSizeTitle.innerHTML = recipe.mainSize
+
+        main.append(title)
+        main.append(mainSizeTitle)
+
+
+        steps = recipe.steps.split("/")
+
+        let i=1
+        steps.forEach(e=>{
+            let newStep = document.createElement("p")
+            newStep.innerHTML= (e)
+            main.append(newStep)
+            i++
+        })
+        recipe.availableSizes.forEach(e => {
+            let sizeTitle = document.createElement("h5")
+            main.append(sizeTitle)
+            e.split(":")
+            sizeTitle.innerHTML = e.split(":")[0]
+            
+            let steps2 = e.split(":")[1].split("/")
+
+            steps2.forEach(c => {
+                let newStep2 = document.createElement("p")
+                newStep2.innerHTML = c
+                main.append(newStep2)
+            })
+
+        })
+    </script>
+</body>
+</html>

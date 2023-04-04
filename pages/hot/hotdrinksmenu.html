@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hot Drinks Categories</title>
+    <link rel="stylesheet" href="../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../res/styles/hotdrinksmenu.css">
+</head>
+<body>
+    <a href="../"></a>
+    <div id="main" class="container-fluid">
+
+
+    </div>
+
+
+    <script>
+        let categories = [
+            {"name": "Espresso", destination: "./espresso/0espressonco.html", color: "#4E2A2A"},
+            {"name": "Latte/Mocha", destination: "./latte/0latte.html", color: "#ccae88"},
+            // {"name": "Mocha", destination: "./mocha/0mocha.html", color: "#967969"},
+            {"name": "Macchiato", destination: "./macchiato/0macchiato.html", color: "#6F4E37"},
+            {"name": "Cappuccino", destination: "./cappuccino/0cappuccino.html", color: "#bcada3"},
+            {"name": "Hot Chocolate", destination: "./hotchocolate/0hotchocolate.html", color: "#8a6258"}
+
+        ]
+
+
+        let main = document.getElementById("main")
+
+        categories.forEach(e=>{
+            newButton = document.createElement("button")
+            newButton.href = e.destination
+            newButton.innerText = e.name
+            newButton.classList.add("btn")
+            newButton.style.backgroundColor = e.color
+            newButton.addEventListener("click", c=>{
+                window.location.href = e.destination
+            })
+            main.append(newButton)
+        })
+
+    </script>
+</body>
+</html>
