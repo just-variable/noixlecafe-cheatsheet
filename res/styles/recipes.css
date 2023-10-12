@@ -31,3 +31,12 @@ img {
     margin: auto;
     max-width: 20rem;
 }
+
+.v60button {
+    display:block;
+    margin: auto
+}
+
+.v60timer {
+    font-size: 10rem;
+}
