@@ -19,7 +19,8 @@
         let drinks = [
             {"name": "Noix", destination: "./noix.html", color: "#4E2A2A"},
             {"name": "Mocha Original", destination: "./mochaoriginal.html", color: "#4E2A2A"},
-            {"name": "Mocha Tiramisu", destination: "./mochatiramisu.html", color: "#4E2A2A"}
+            {"name": "Mocha Tiramisu", destination: "./mochatiramisu.html", color: "#4E2A2A"},
+            {"name": "Pumpkin Spice", destination: "./pumpkinspice.html", color: "#FF7518", imageURL: "../../../res/images/pumpspice.jpg"}
         ]
 
 
@@ -40,6 +41,10 @@
             newButton.addEventListener("click", c=>{
                 window.location.href = (e.destination)
             })
+            if(e.imageURL){
+                console.log("hi")
+                newButton.style.backgroundImage = `url(${e.imageURL})`
+            }
             main.append(newButton)
             i++
         })
