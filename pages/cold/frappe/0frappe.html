@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hot Espresso Categories</title>
+    <title>FRAPPE</title>
     <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
     <link rel="stylesheet" href="../../../res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../../../res/styles/colddrinksmenu.css">
@@ -20,7 +20,10 @@
             {"name": "Noix", destination: "./noix.html", color: "#4E2A2A"},
             {"name": "Mocha Original", destination: "./mochaoriginal.html", color: "#4E2A2A"},
             {"name": "Mocha Tiramisu", destination: "./mochatiramisu.html", color: "#4E2A2A"},
-            {"name": "Pumpkin Spice", destination: "./pumpkinspice.html", color: "#FF7518", imageURL: "../../../res/images/pumpspice.jpg"}
+            {"name": "Caramel Frappe", destination: "./caramelfrappe.html", color: "#FFD59A"},
+            {"name": "Coffee Frappe", destination: "./coffeefrappe.html", color: "#4E2A2A"},
+            {"name": "Pumpkin Spice", destination: "./pumpkinspice.html", color: "#FF7518", special: 1},
+            {"name": "Red Velvet", destination: "./redvelvet.html", color: "#9c0000", special: 1},
         ]
 
 
@@ -41,9 +44,8 @@
             newButton.addEventListener("click", c=>{
                 window.location.href = (e.destination)
             })
-            if(e.imageURL){
-                console.log("hi")
-                newButton.style.backgroundImage = `url(${e.imageURL})`
+            if(e.special == 1){
+                newButton.style.border = "3px solid black"
             }
             main.append(newButton)
             i++

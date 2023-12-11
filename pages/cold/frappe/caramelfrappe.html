@@ -14,14 +14,14 @@
 
 
     <script>
-        let recipe={cup: "Small Espresso Cup", steps: "35g Chocolate Powder/1 pump chocolate sauce/0.25 pumps vanilla syrup/250mL Milk (Steamed)/5g chocolate powder on top/Whipped Cream", mainSize: "Dine in (Big Handle Cup)", availableSizes: ["12oz: same", "16oz: 50g Chocolate Powder/1.5 Chocolate Sauce/300mL Milk (Steamed)/5g Chocolate Powder on top/Whipped Cream (extra topping)"]}
+        let recipe={cup: "Small Espresso Cup", steps: "100mL milk + 1 cup ice/2 pumps caramel sauce/1 pump caramel syrup/0.5 scoop vanilla(20g)/blend", mainSize: "Dine in (smoothie cup)", availableSizes: ["400oz: same"]}
 
         let main = document.getElementById("main")
         let title = document.createElement("h1")
-        title.innerText="Hot Chocolate"
+        title.innerText="Caramel Frappe"
+        main.append(title)
         let mainSizeTitle = document.createElement("h5")
         mainSizeTitle.innerHTML = recipe.mainSize
-        main.append(title)
         main.append(mainSizeTitle)
 
         steps = recipe.steps.split("/")

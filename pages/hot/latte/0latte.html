@@ -24,16 +24,17 @@
             {"name": "Vanilla", destination: "./vanilla.html", color: "#F3E5AB"},
             {"name": "Caramel", destination: "./caramel.html", color: "#C68E17"},
             {"name": "Cinnamon", destination: "./cinnamon.html", color: "#D2691E"},
-            {"name": "Pumpkin Spice", destination: "./pumpkinspice.html", color: "#FF7518"},
             {"name": "Rose", destination: "./rose.html", color: "#FF69B4"},
             {"name": "Charcoal", destination: "./charcoal.html", color: "#333333"},
-            {"name": "Flat White", destination: "./flatwhite.html", color: "#888"},
-            {"name": "Mocha", destination: "./mocha.html", color: "#BEA07E"},
-            {"name": "White Mocha", destination: "./whitemocha.html", color: "#BEA07E"},
-            {"name": "White Mocha Caramel Latte", destination: "./whitemochacaramel.html", color: "#ffc56e"},
-            {"name": "Salted Caramel Mocha", destination: "./saltedcaramelmocha.html", color: "#BEA07E"}
-                    
-            
+            {"name": "Flat White", destination: "./flatwhite.html", color: "#3E2413"},
+            {"name": "Mocha", destination: "./mocha.html", color: "#30210c"},
+            {"name": "White Mocha", destination: "./whitemocha.html", color: "#ffe1b8"},
+            {"name": "Caramel Macchiato", destination: "./caramelmacchiato.html", color: "#ffe1b8"},
+            {"name": "White Mocha Caramel Latte", destination: "./whitemochacaramel.html", color: "#fcb738"},
+            {"name": "Salted Caramel Mocha", destination: "./saltedcaramelmocha.html", color: "#BEA07E"},
+            {"name": "Pumpkin Spice", destination: "./pumpkinspice.html", color: "#FF7518", special: 1},
+            {"name": "Red Velvet", destination: "./redvelvet.html", color: "#9c0000", special: 1},
+            {"name": "Gingerbread", destination: "./gingerbread.html", color: "#CA9F71", special: 1},
         ]
 
 
@@ -54,6 +55,9 @@
             newButton.addEventListener("click", c=>{
                 window.location.href = (e.destination)
             })
+            if(e.special == 1){
+                newButton.style.border = "3px solid black"
+            }
             main.append(newButton)
             i++
         })
