@@ -23,6 +23,7 @@
             {"name": "Vanilla", destination: "./vanilla.html", color: "#F3E5AB"},
             {"name": "Caramel", destination: "./caramel.html", color: "#C68E17"},
             {"name": "Cinnamon", destination: "./cinnamon.html", color: "#D2691E"},
+            //{"name": "Turmeric", destination: "./turmeric.html", color: "#D2691E"},
             {"name": "Rose", destination: "./rose.html", color: "#FF69B4"},
             {"name": "Red Velvet", destination: "./redvelvet.html", color: "#9c0000", special: 1},
             {"name": "Charcoal", destination: "./charcoal.html", color: "#333333"},
@@ -31,7 +32,10 @@
             {"name": "Iced Caramel Macchiato", destination: "./caramelmacchiato.html", color: "#ffcb6b"},
             {"name": "White Mocha Caramel", destination: "./whitemochacaramel.html", color: "#fcb738"},
             {"name": "Salted Caramel Mocha", destination: "./saltedcaramelmocha.html", color: "#5c3c00"},
+            //  {"name": "Simonelli", destination: "./simonelli.html", color: "#fa1911", marina: 1},
+            //  {"name": "Mariana Trench", destination: "./marianatrench.html", color: "#fa1911", marina: 1}
         ]
+        
 
 
         let main = document.getElementById("main")
@@ -53,6 +57,9 @@
             })
             if(e.special == 1){
                 newButton.style.border = "3px solid black"
+            }
+            if(e.marina == 1){
+                newButton.style.backgroundImage = "linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet)";
             }
             main.append(newButton)
             i++
