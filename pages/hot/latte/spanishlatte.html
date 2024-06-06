@@ -14,14 +14,14 @@
 
 
     <script>
-        let recipe={cup: "Small Espresso Cup", steps: "100mL Dr. Smoothie Peach/75mL water/1 cup ice cubes/blend", mainSize: "Dine in (milkshake cup)", availableSizes: ["400cc: same", "500cc: 150mL dr. smoothie PAP/100ml water/1 cup ice cubes/ blend"]}
+        let recipe={cup: "Small Espresso Cup", steps: "Single shot/25g condensed milk/mix well/220mL Milk with foam (steamed)", mainSize: "Dine in (Hourglass)", availableSizes: ["9oz: same", "12oz: 2 shots/45g condensed milk/mix well/250mL steamed milk", "16oz:3 shots/65g condensed milk/mix well/300mL steamed Milk"]}
 
         let main = document.getElementById("main")
         let title = document.createElement("h1")
-        title.innerText="Peach Apricot Pear Smoothie"
-        main.append(title)
+        title.innerText="Spanish Latte"
         let mainSizeTitle = document.createElement("h5")
         mainSizeTitle.innerHTML = recipe.mainSize
+        main.append(title)
         main.append(mainSizeTitle)
 
         steps = recipe.steps.split("/")
