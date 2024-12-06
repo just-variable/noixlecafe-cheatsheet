@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Cheatsheet</title>
@@ -7,24 +8,78 @@
     <link rel="stylesheet" href="./res/styles/bootstrap-4.0.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="./res/styles/index.css">
 </head>
+
 <body>
- <div class="main">
+    <div class="main" id="main">
         <button class="btn btn-primary" onclick="goColdDrinks()">Cold Drinks</button>
         <button class="btn btn-danger" onclick="goHotDrinks()">Hot Drinks</button>
-</div>
+    </div>
+    <div id="auth">
+        <div class="input-group mb-3" style="width: 450px">
+            <input id="pass" type="password" class="form-control" placeholder="password" aria-describedby="basic-addon2"
+                onkeyup="handleChange(this)">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" style="margin: 0;" type="button"
+                    onclick="handleChange(document.querySelector('#pass'))">Enter</button>
+            </div>
+        </div>
+    </div>
 
 
+    <script>
+        document.querySelector('#main').classList.add('hidden');
 
-        
+        function getTimeFor2AM() {
+            const now = new Date();
+            const expiresAt = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 4, 0, 0, 0);
+            if (expiresAt < now) {
+                expiresAt.setDate(expiresAt.getDate() + 1);
+            }
+            return expiresAt;
+        }
 
-<script>
-    function goColdDrinks(){
-        window.location.href = ("./pages/cold/colddrinksmenu.html")
-    }
-    function goHotDrinks(){
-        window.location.href = ("./pages/hot/hotdrinksmenu.html")
-    }
-</script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        if (getCookie('access') == 'granted') {
+            document.querySelector('#main').classList.remove('hidden');
+            document.querySelector('#auth').style.display = 'none';
+            console.log('access granted')
+        } else {
+            console.log('denied')
+        }
+
+        function goColdDrinks() {
+            window.location.href = ("./pages/cold/colddrinksmenu.html")
+        }
+        function goHotDrinks() {
+            window.location.href = ("./pages/hot/hotdrinksmenu.html")
+        }
+
+
+        function handleChange(e) {
+            if (e.value == 'abc123') {
+                document.querySelector('#main').classList.remove('hidden');
+                document.querySelector('#auth').style.display = 'none';
+                document.cookie = `access=granted; expires=${getTimeFor2AM().toUTCString()}; path=/;`;
+            }
+        }
+
+    </script>
 
 </body>
+
 </html>

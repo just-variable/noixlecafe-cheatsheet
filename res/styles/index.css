@@ -15,3 +15,15 @@ button{
 .br {
     width: 100%
 }
+
+#auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 90vh;
+}
+
+.hidden {
+    display: none !important;
+}
