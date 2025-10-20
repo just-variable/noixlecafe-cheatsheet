@@ -12,12 +12,28 @@ export default function Login() {
     // 2 emps cannot have the same name
     const employees = [
         {
-            name: 'Margueritta',
-            pass: 'abc123'
+            name: 'Store',
+            pass: 'panda'
         },
         {
-            name: 'Anthony',
-            pass: 'abc123'
+            name: 'Elissa',
+            pass: 'yamrayti'
+        },
+        {
+            name: 'Mario',
+            pass: 'supermario'
+        },
+        {
+            name: 'Elie',
+            pass: 'zetelie'
+        },
+        {
+            name: 'Kevin',
+            pass: 'kevout'
+        },
+        {
+            name: 'Maroun',
+            pass: 'marmaroun'
         },
     ];
 
