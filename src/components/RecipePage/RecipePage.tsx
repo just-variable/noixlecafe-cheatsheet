@@ -11,6 +11,7 @@ export default function RecipePage({ type }: RecipePageProps) {
 
     const { drinks, categories } = useGetDrinks(type);
 
+
     const styles = getRecipePageStyles(type);
 
     const [search, setSearch] = useState<string>('');
@@ -104,7 +105,7 @@ export default function RecipePage({ type }: RecipePageProps) {
                     {c}
                 </Button>))}
         </Stack>
-        <Grid size={3} sx={styles.leftPane}>
+        <Grid size={{xs: 12, md: 3}} sx={styles.leftPane}>
             <TextField
                 placeholder="search"
                 value={search}
@@ -137,7 +138,7 @@ export default function RecipePage({ type }: RecipePageProps) {
             </Stack>
 
         </Grid>
-        <Grid size={9} sx={styles.stepsContainer} container>
+        <Grid size={{xs: 12, md: 8}} sx={styles.stepsContainer} container>
             <Typography sx={styles.title}>{selectedDrink}</Typography>
             <Typography sx={{ ...styles.sizeTitle, mt: 0 }}>{currentDrink.mainSize}</Typography>
             {
