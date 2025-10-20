@@ -66,5 +66,6 @@ export const getRecipePageStyles = (type: string) => ({
         flexDirection: 'column',
         alignItems: 'center',
         gap: 1,
+        mb: {xs: 6, md: 0}
     }
 })

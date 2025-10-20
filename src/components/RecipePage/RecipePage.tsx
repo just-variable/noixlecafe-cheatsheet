@@ -89,7 +89,11 @@ export default function RecipePage({ type }: RecipePageProps) {
 
     useEffect(() => {
         setCrossedElements([]);
-    }, [selectedDrink, selectedTab])
+    }, [selectedDrink, selectedTab]);
+
+    useEffect(() => {
+        setSearch('');
+    }, [selectedTab]);
 
     return <Grid container size={12}>
         <Stack sx={styles.topBar}>
@@ -105,7 +109,7 @@ export default function RecipePage({ type }: RecipePageProps) {
                     {c}
                 </Button>))}
         </Stack>
-        <Grid size={{xs: 12, md: 3}} sx={styles.leftPane}>
+        <Grid size={{ xs: 12, md: 3 }} sx={styles.leftPane}>
             <TextField
                 placeholder="search"
                 value={search}
@@ -116,7 +120,7 @@ export default function RecipePage({ type }: RecipePageProps) {
                         endAdornment: (
                             <InputAdornment position="end">
                                 <IconButton onClick={() => setSearch('')}>
-                                    <Close />
+                                    <Close sx={{ display: search ? 'block' : 'none' }} />
                                 </IconButton>
                             </InputAdornment>
                         ),
@@ -138,7 +142,7 @@ export default function RecipePage({ type }: RecipePageProps) {
             </Stack>
 
         </Grid>
-        <Grid size={{xs: 12, md: 8}} sx={styles.stepsContainer} container>
+        <Grid size={{ xs: 12, md: 8 }} sx={styles.stepsContainer} container>
             <Typography sx={styles.title}>{selectedDrink}</Typography>
             <Typography sx={{ ...styles.sizeTitle, mt: 0 }}>{currentDrink.mainSize}</Typography>
             {
