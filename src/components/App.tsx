@@ -8,7 +8,7 @@ import RecipePage from "./RecipePage/RecipePage";
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/noixlecafe-cheatsheet">
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<Login />} />
