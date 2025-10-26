@@ -16,6 +16,10 @@ export default function Login() {
             pass: 'panda'
         },
         {
+            name: 'Rabih',
+            pass: 'faselrabih'
+        },
+        {
             name: 'Elissa',
             pass: 'yamrayti'
         },
@@ -24,16 +28,8 @@ export default function Login() {
             pass: 'supermario'
         },
         {
-            name: 'Elie',
-            pass: 'zetelie'
-        },
-        {
             name: 'Kevin',
             pass: 'kevout'
-        },
-        {
-            name: 'Maroun',
-            pass: 'marmaroun'
         },
     ];
 
