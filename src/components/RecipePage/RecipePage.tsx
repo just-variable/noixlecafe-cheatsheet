@@ -132,7 +132,7 @@ export default function RecipePage({ type }: RecipePageProps) {
                     filteredDrinks.map(drink => {
                         return <Button
                             fullWidth
-                            sx={{ ...styles.drinkButton, backgroundColor: drink.color, border: selectedDrink === drink.name ? '3px solid black' : 'none' }}
+                            sx={{ ...styles.drinkButton, backgroundColor: drink?.color || '', backgroundImage: drink?.backgroundImage || '', border: selectedDrink === drink.name ? '3px solid black' : 'none' }}
                             onClick={() => { setSelectedDrink(drink.name); }}
                         >
                             {drink.name}
