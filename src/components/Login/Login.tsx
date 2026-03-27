@@ -16,10 +16,6 @@ export default function Login() {
             pass: 'panda'
         },
         {
-            name: 'Rabih',
-            pass: 'faselrabih'
-        },
-        {
             name: 'Elissa',
             pass: 'yamrayti'
         },
@@ -31,6 +27,10 @@ export default function Login() {
             name: 'Kevin',
             pass: 'kevout'
         },
+        {
+            name: 'Omar',
+            pass: 'ohmargod'
+        }
     ];
 
     const styles = getLoginStyles();
